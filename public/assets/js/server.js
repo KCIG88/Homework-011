@@ -1,14 +1,15 @@
 var fs = require("fs")
 var path = require ("path")
 var express = require("express")
-const app = express()
+const app = express();
+const serve = require('express-static');
 const PORT = process.env.PORT || 3000;
 const db = ("./db/db.json")
 
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'))
+app.use(express.static('/public'));
 
 
 app.get('/', (req, res) => {
